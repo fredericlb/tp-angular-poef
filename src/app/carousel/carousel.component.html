@@ -1,0 +1,16 @@
+<p>
+  <app-component1
+    [nombre]="nombreSaisi"
+    *ngIf="composantAffiche === 1"></app-component1>
+  <app-component2 [nombre]="nombreSaisi"
+    *ngIf="composantAffiche === 2"></app-component2>
+  <app-component3 [nombre]="nombreSaisi"
+    *ngIf="composantAffiche === 3"></app-component3>
+</p>
+<div>
+  <button (click)="precedent()"
+    [disabled]="composantAffiche === 1">Précédent</button>
+  <input [(ngModel)]="nombreSaisi">
+  <button (click)="suivant()"
+    [disabled]="composantAffiche === 3">Suivant</button>
+</div>
