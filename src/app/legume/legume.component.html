@@ -1,13 +1,4 @@
-<p>
-  {{ instance.nom | uppercase }} : {{ instance.couleur }}
-  <input type="text" [(ngModel)]="instance.couleur">
-  <button (click)="afficher()">Afficher</button>
-</p>
-<ul *ngIf="afficheListe">
-  <!-- <li *ngFor="let l of list" [class]="l.couleur"> -->
-  <li *ngFor="let l of list"
-      [class.vert]="l.couleur === 'vert'"
-      [class.rouge]="l.couleur === 'rouge'">
-    {{l.nom}} : {{l.couleur}}
-  </li>
-</ul>
+<li [class.vert]="instance.couleur === 'vert'"
+    [class.rouge]="instance.couleur === 'rouge'">
+  {{instance.nom}} : {{instance.couleur}}
+</li>

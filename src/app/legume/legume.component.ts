@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Legume} from '../../Legume';
 import Legumes from '../../Legumes';
 
@@ -9,21 +9,11 @@ import Legumes from '../../Legumes';
 })
 export class LegumeComponent implements OnInit {
 
-  instance: Legume = {
-    nom: 'Courgette',
-    couleur: 'Vert'
-  };
-
-  list = Legumes;
-
-  afficheListe = true;
+  @Input()
+  instance: Legume;
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  afficher() {
-    console.log(this.instance.couleur);
   }
 }
