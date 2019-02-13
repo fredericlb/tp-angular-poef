@@ -1,0 +1,16 @@
+<p>
+  {{instance.nom}} : {{instance.nombreHabitants}}
+  <select [(ngModel)]="selectedNombreHabitants">
+    <option value="">-- CHOISIR --</option>
+    <option *ngFor="let v of list" [value]="v.nombreHabitants">
+      {{v.nom}}
+    </option>
+  </select>
+</p>
+<div
+  *ngIf="selectedNombreHabitants != ''"
+  [class.rouge]="+selectedNombreHabitants > 10000"
+  [class.bleu]="+selectedNombreHabitants <= 10000"
+  >
+  {{selectedNombreHabitants}}
+</div>
