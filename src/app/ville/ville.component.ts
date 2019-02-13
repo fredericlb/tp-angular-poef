@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Ville} from '../../Ville';
 import Villes from '../../Villes';
 
@@ -9,14 +9,8 @@ import Villes from '../../Villes';
 })
 export class VilleComponent implements OnInit {
 
-  instance: Ville = {
-    nom: 'Lyon',
-    nombreHabitants: 500000
-  }
-
-  list = Villes;
-
-  selectedNombreHabitants = '';
+  @Input()
+  nombreHabitants: number;
 
   constructor() { }
 

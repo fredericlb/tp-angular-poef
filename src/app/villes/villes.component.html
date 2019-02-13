@@ -1,0 +1,10 @@
+<p>
+  {{instance.nom}} : {{instance.nombreHabitants}}
+  <select [(ngModel)]="selectedNombreHabitants">
+    <option value="">-- CHOISIR --</option>
+    <option *ngFor="let v of list" [value]="v.nombreHabitants">
+      {{v.nom}}
+    </option>
+  </select>
+  <app-ville [nombreHabitants]="selectedNombreHabitants"></app-ville>
+</p>

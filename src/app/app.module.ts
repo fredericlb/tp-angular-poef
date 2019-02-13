@@ -7,6 +7,7 @@ import { LegumesComponent } from './legumes/legumes.component';
 import { VilleComponent } from './ville/ville.component';
 import {FormsModule} from '@angular/forms';
 import { InscriptionComponent } from './inscription/inscription.component';
+import {VillesComponent} from './villes/villes.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { InscriptionComponent } from './inscription/inscription.component';
     LegumeComponent,
     VilleComponent,
     InscriptionComponent,
-    LegumesComponent
+    LegumesComponent,
+    VillesComponent
   ],
   imports: [
     BrowserModule,
