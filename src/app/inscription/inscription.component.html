@@ -1,0 +1,27 @@
+<form (submit)="afficher()">
+  <div>
+    <label>Nom</label>
+    <input [(ngModel)]="instance.nom" name="nom">
+  </div>
+  <div>
+    <label>Prénom</label>
+    <input [(ngModel)]="instance.prenom" name="prenom">
+  </div>
+  <div>
+    <label>Email</label>
+    <input [(ngModel)]="instance.email" name="email" type="email">
+  </div>
+  <div>
+    <label>Mot de passe</label>
+    <input [(ngModel)]="instance.motdepasse" name="password" type="password">
+  </div>
+  <div>
+    <label>Niveau</label>
+    <select name="niveau" [(ngModel)]="instance.niveau">
+      <option value="1">Débutant</option>
+      <option value="2">Intermédiaire</option>
+      <option value="3">Expert</option>
+    </select>
+  </div>
+  <input type="submit" value="Inscription" />
+</form>
