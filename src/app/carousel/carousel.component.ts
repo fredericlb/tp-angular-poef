@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
 
-  nombreSaisi: number;
+  nombreSaisi = 1;
   composantAffiche = 1;
 
   constructor() { }
@@ -21,5 +21,9 @@ export class CarouselComponent implements OnInit {
 
   suivant() {
     this.composantAffiche += 1;
+  }
+
+  onChange(e) {
+    this.nombreSaisi = e;
   }
 }
