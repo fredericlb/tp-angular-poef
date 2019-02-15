@@ -17,6 +17,7 @@ import { PartieComponent } from './partie/partie.component';
 import { Jeu2Component } from './jeu2/jeu2.component';
 import { QuestionComponent } from './question/question.component';
 import { ScoreComponent } from './score/score.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ScoreComponent } from './score/score.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

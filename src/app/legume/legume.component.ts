@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Legume} from '../../Legume';
-import Legumes from '../../Legumes';
 
 @Component({
   selector: 'app-legume',

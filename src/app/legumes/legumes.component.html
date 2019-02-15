@@ -1,3 +1,7 @@
+Mes légumes :
+<div *ngIf="list === null">
+  Chargement en cours
+</div>
 <ul *ngIf="afficheListe">
   <app-legume *ngFor="let l of list" [instance]="l"></app-legume>
 </ul>
