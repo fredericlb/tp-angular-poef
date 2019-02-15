@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Verbe} from '../../Verbe';
-import Verbes from '../../Verbes';
 import {timer} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+
+const URL = 'https://raw.githubusercontent.com/fredericlb/tp-angular-poef/master/examples/Verbes.json';
 
 @Component({
   selector: 'app-jeu2',
@@ -13,21 +15,27 @@ export class Jeu2Component implements OnInit {
   currentVerb: Verbe = null;
   isDone = false;
   score = 0;
+  verbes: Verbe[] = null;
+  http: HttpClient;
 
-  constructor() { }
+  constructor(http: HttpClient) {
+    this.http = http;
+  }
 
   createQuestion() {
-    const idx = Math.floor(Verbes.length * Math.random());
-    this.currentVerb = Verbes[idx];
+    const idx = Math.floor(this.verbes.length * Math.random());
+    this.currentVerb = this.verbes[idx];
   }
 
   ngOnInit() {
-    this.createQuestion();
-
-    timer(20000)
-      .subscribe(() => {
-        this.isDone = true;
-      });
+    this.http.get(URL).subscribe((resp: Verbe[]) => {
+      this.verbes = resp;
+      this.createQuestion();
+      timer(20000)
+        .subscribe(() => {
+          this.isDone = true;
+        });
+    });
   }
 
   hasAnswered(won: boolean) {
