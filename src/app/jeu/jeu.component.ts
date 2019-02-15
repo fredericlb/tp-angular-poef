@@ -9,15 +9,17 @@ import {timer} from 'rxjs';
 export class JeuComponent implements OnInit {
 
   isDone = false;
-  hasWon: boolean;
+  hasWon = false;
 
   constructor() { }
 
   ngOnInit() {
     timer(6000)
-      .subscribe(() => {
-        console.log('terminé');
-      });
+      .subscribe(this.isFinished.bind(this));
+  }
+
+  isFinished() {
+    console.log(this.hasWon);
   }
 
   onResult(hasWon) {

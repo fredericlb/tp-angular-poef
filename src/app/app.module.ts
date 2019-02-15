@@ -14,6 +14,9 @@ import { Component2Component } from './component2/component2.component';
 import { Component3Component } from './component3/component3.component';
 import { JeuComponent } from './jeu/jeu.component';
 import { PartieComponent } from './partie/partie.component';
+import { Jeu2Component } from './jeu2/jeu2.component';
+import { QuestionComponent } from './question/question.component';
+import { ScoreComponent } from './score/score.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { PartieComponent } from './partie/partie.component';
     Component2Component,
     Component3Component,
     JeuComponent,
-    PartieComponent
+    PartieComponent,
+    Jeu2Component,
+    QuestionComponent,
+    ScoreComponent
   ],
   imports: [
     BrowserModule,

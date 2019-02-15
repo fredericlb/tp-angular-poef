@@ -1,2 +1,6 @@
-<app-jeu></app-jeu>
+<app-inscription *ngIf="user == null"
+                 (done)="onInscriptionDone($event)">
+</app-inscription>
+<app-jeu2 *ngIf="user != null">
 
+</app-jeu2>

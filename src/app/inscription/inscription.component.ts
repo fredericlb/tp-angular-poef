@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Utilisateur} from '../../Utilisateur';
 
 @Component({
@@ -7,6 +7,9 @@ import {Utilisateur} from '../../Utilisateur';
   styleUrls: ['./inscription.component.css']
 })
 export class InscriptionComponent implements OnInit {
+
+  @Output()
+  done = new EventEmitter<Utilisateur>();
 
   instance: Utilisateur = {
     nom: '',
@@ -22,8 +25,8 @@ export class InscriptionComponent implements OnInit {
   ngOnInit() {
   }
 
-  afficher() {
-    console.log(this.instance);
+  send() {
+    this.done.emit(this.instance);
   }
 
 }
