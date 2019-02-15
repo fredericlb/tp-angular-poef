@@ -1,0 +1,20 @@
+[
+  {
+    "baseVerbale": "abide",
+    "preterit": "abode",
+    "participePasse": "abode",
+    "traduction": "demeurer"
+  },
+  {
+    "baseVerbale": "arise",
+    "preterit": "arose",
+    "participePasse": "arisen",
+    "traduction": "s'élever"
+  },
+  {
+    "baseVerbale": "awake",
+    "preterit": "awoke",
+    "participePasse": "awaken",
+    "traduction": "se réveiller"
+  }
+]
