@@ -1,0 +1,4 @@
+<h1>C'est le jeu</h1>
+<app-partie *ngIf="!isDone" (result)="onResult($event)"></app-partie>
+<div *ngIf="isDone && hasWon">C'est gagné</div>
+<div *ngIf="isDone && !hasWon">C'est perdu</div>

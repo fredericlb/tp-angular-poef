@@ -12,6 +12,8 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { Component1Component } from './component1/component1.component';
 import { Component2Component } from './component2/component2.component';
 import { Component3Component } from './component3/component3.component';
+import { JeuComponent } from './jeu/jeu.component';
+import { PartieComponent } from './partie/partie.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { Component3Component } from './component3/component3.component';
     CarouselComponent,
     Component1Component,
     Component2Component,
-    Component3Component
+    Component3Component,
+    JeuComponent,
+    PartieComponent
   ],
   imports: [
     BrowserModule,
