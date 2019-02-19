@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Utilisateur} from '../../Utilisateur';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-inscription',
@@ -7,6 +8,8 @@ import {Utilisateur} from '../../Utilisateur';
   styleUrls: ['./inscription.component.css']
 })
 export class InscriptionComponent implements OnInit {
+
+  router: Router;
 
   @Output()
   done = new EventEmitter<Utilisateur>();
@@ -20,13 +23,16 @@ export class InscriptionComponent implements OnInit {
     ville: ''
   };
 
-  constructor() { }
+  constructor(router: Router) {
+    this.router = router;
+  }
 
   ngOnInit() {
   }
 
   send() {
     this.done.emit(this.instance);
+    this.router.navigate(['/jeu']);
   }
 
 }

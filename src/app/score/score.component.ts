@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-score',
@@ -7,12 +8,16 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ScoreComponent implements OnInit {
 
-  @Input()
   score: number;
+  route: ActivatedRoute;
 
-  constructor() { }
+  constructor(route: ActivatedRoute) {
+    this.route = route;
+  }
 
   ngOnInit() {
+    this.score = +this.route.snapshot.paramMap.get('score');
   }
+
 
 }

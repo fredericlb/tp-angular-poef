@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Verbe} from '../../Verbe';
 import {timer} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 const URL = 'https://raw.githubusercontent.com/fredericlb/tp-angular-poef/master/examples/Verbes.json';
 
@@ -17,9 +18,11 @@ export class Jeu2Component implements OnInit {
   score = 0;
   verbes: Verbe[] = null;
   http: HttpClient;
+  router: Router;
 
-  constructor(http: HttpClient) {
+  constructor(http: HttpClient, router: Router) {
     this.http = http;
+    this.router = router;
   }
 
   createQuestion() {
@@ -34,6 +37,7 @@ export class Jeu2Component implements OnInit {
       timer(20000)
         .subscribe(() => {
           this.isDone = true;
+          this.router.navigate(['/score', this.score]);
         });
     });
   }

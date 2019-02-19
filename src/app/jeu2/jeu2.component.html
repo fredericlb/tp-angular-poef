@@ -5,4 +5,3 @@
   *ngIf="verbes != null && isDone === false"
   [verbe]="this.currentVerb"
   (answered)="hasAnswered($event)"></app-question>
-<app-score [score]="score" *ngIf="isDone"></app-score>
