@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Verbe} from '../../Verbe';
+import {GameService} from '../game.service';
 
 @Component({
   selector: 'app-question',
@@ -18,17 +19,17 @@ export class QuestionComponent implements OnInit {
   participePasse = '';
 
 
-  constructor() { }
+  constructor(public gameService: GameService) { }
 
   ngOnInit() {
   }
 
   validate() {
-    const won = this.verbe.preterit === this.preterit &&
-      this.verbe.participePasse === this.participePasse;
+    const won = this.gameService.updateScore(
+        this.verbe, this.preterit, this.participePasse);
     this.participePasse = '';
     this.preterit = '';
-    this.answered.emit(won);
+    this.answered.emit();
   }
 
 }

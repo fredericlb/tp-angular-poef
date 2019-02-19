@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'legumes', component: LegumesComponent},
   { path : 'inscription', component: InscriptionComponent},
   { path : 'jeu', component: Jeu2Component},
-  { path : 'score/:score', component: ScoreComponent},
+  { path : 'score', component: ScoreComponent},
 ];
 
 

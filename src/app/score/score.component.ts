@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {GameService} from '../game.service';
 
 @Component({
   selector: 'app-score',
@@ -8,15 +9,13 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ScoreComponent implements OnInit {
 
-  score: number;
   route: ActivatedRoute;
 
-  constructor(route: ActivatedRoute) {
+  constructor(route: ActivatedRoute, public gameService: GameService) {
     this.route = route;
   }
 
   ngOnInit() {
-    this.score = +this.route.snapshot.paramMap.get('score');
   }
 
 
