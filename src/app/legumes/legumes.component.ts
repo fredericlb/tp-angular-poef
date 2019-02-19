@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Legume} from '../../Legume';
 import {HttpClient} from '@angular/common/http';
+import {LegumesService} from '../legumes.service';
 
-const URL = 'https://raw.githubusercontent.com/fredericlb/tp-angular-poef/master/examples/Legumes.json';
+
 @Component({
   selector: 'app-legumes',
   templateUrl: './legumes.component.html',
@@ -10,24 +11,14 @@ const URL = 'https://raw.githubusercontent.com/fredericlb/tp-angular-poef/master
 })
 export class LegumesComponent implements OnInit {
 
-  list: Legume[] = null;
-
   afficheListe = true;
-  http: HttpClient;
 
   constructor(
-    http: HttpClient
-  ) {
-    this.http = http;
-  }
+      public legumesService: LegumesService
+  ) {}
 
   ngOnInit() {
-    setTimeout(() => {
-      this.http.get(URL)
-        .subscribe((resp: Legume[]) => {
-          this.list = resp;
-        });
-    }, 5000);
+    this.legumesService.fetch();
   }
 
 }
