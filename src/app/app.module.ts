@@ -18,6 +18,7 @@ import { Jeu2Component } from './jeu2/jeu2.component';
 import { QuestionComponent } from './question/question.component';
 import { ScoreComponent } from './score/score.component';
 import {HttpClientModule} from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

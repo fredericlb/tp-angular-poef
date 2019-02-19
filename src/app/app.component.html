@@ -1,6 +1,6 @@
-<app-inscription *ngIf="user == null"
-                 (done)="onInscriptionDone($event)">
-</app-inscription>
-<app-jeu2 *ngIf="user != null">
+<h1>Ma super application</h1>
 
-</app-jeu2>
+<router-outlet></router-outlet>
+
+<h2>Mes routes</h2>
+<a routerLink="/villes">Villes</a>
