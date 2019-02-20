@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Utilisateur} from '../Utilisateur';
 import {Router} from '@angular/router';
+import {GameService} from './game.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent {
   user: Utilisateur = null;
   router: Router;
 
-  constructor(router: Router) {
+  constructor(router: Router, public gameService: GameService) {
     this.router = router;
   }
 

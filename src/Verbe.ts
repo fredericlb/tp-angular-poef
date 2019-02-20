@@ -5,8 +5,7 @@
   `traduction` varchar(100) NOT NULL,
  */
 export class Verbe {
+  id: number;
   baseVerbale: string;
-  preterit: string;
-  participePasse: string;
   traduction: string;
 }

@@ -1,7 +1,8 @@
 <h1>Ma super application</h1>
 
-<a routerLink="/inscription">Je m'inscris</a>
-<a routerLink="/connexion">Je me connecte</a>
+<a routerLink="/inscription">Je m'inscris</a><br/>
+<a routerLink="/connexion">Je me connecte</a><br/>
+<a routerLink="/jeu" *ngIf="gameService.playerId != null">Je joue</a><br/>
 
 <router-outlet></router-outlet>
 
