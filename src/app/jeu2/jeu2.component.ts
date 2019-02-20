@@ -27,18 +27,23 @@ export class Jeu2Component implements OnInit {
   }
 
   createQuestion() {
-    this.currentVerb = this.verbesService.getRandom();
+    this.currentVerb = null;
+    this.verbesService.getRemoteRandom(verb => {
+      this.currentVerb = verb;
+    });
   }
 
   ngOnInit() {
-    this.verbesService.fetch(() => {
+    this.createQuestion();
+    timer(20000)
+      .subscribe(() => {
+        this.isDone = true;
+        this.router.navigate(['/score']);
+      });
+    /*this.verbesService.fetch(() => {
       this.createQuestion();
-      timer(20000)
-          .subscribe(() => {
-            this.isDone = true;
-            this.router.navigate(['/score']);
-          });
-    });
+
+    });*/
   }
 
   hasAnswered(won: boolean) {

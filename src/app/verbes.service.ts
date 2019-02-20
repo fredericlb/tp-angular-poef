@@ -26,4 +26,10 @@ export class VerbesService {
     const idx = Math.floor(this.list.length * Math.random());
     return this.list[idx];
   }
+
+  getRemoteRandom(cb) {
+    this.http.get('http://localhost:8000/verbes/random').subscribe((verb) => {
+      cb(verb);
+    });
+  }
 }

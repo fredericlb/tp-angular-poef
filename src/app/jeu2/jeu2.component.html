@@ -1,7 +1,7 @@
-<div *ngIf="verbesService.list === null">
+<div *ngIf="currentVerb === null">
   Chargement en cours
 </div>
 <app-question
-  *ngIf="verbesService.list != null && isDone === false"
-  [verbe]="this.currentVerb"
+  *ngIf="currentVerb != null && isDone === false"
+  [verbe]="currentVerb"
   (answered)="hasAnswered($event)"></app-question>
