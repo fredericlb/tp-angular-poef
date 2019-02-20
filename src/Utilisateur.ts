@@ -3,6 +3,6 @@ export class Utilisateur {
   prenom: string;
   email: string;
   motdepasse: string;
-  niveau: number;
-  ville: string;
+  niveau: string;
+  idville: number;
 }

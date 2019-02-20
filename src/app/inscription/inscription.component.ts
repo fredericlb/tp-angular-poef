@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Utilisateur} from '../../Utilisateur';
 import {Router} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-inscription',
@@ -19,11 +20,11 @@ export class InscriptionComponent implements OnInit {
     prenom: '',
     email: '',
     motdepasse: '',
-    niveau: 1,
-    ville: ''
+    niveau: 'débutant',
+    idville: 2
   };
 
-  constructor(router: Router) {
+  constructor(router: Router, private http: HttpClient) {
     this.router = router;
   }
 
@@ -31,8 +32,11 @@ export class InscriptionComponent implements OnInit {
   }
 
   send() {
-    this.done.emit(this.instance);
-    this.router.navigate(['/jeu']);
+    const body = this.instance;
+    this.http.post('http://localhost:8000/joueur', body)
+      .subscribe(() => {
+        this.router.navigate(['/jeu']);
+      });
   }
 
 }
