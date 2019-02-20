@@ -19,6 +19,7 @@ import { QuestionComponent } from './question/question.component';
 import { ScoreComponent } from './score/score.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { ConnexionComponent } from './connexion/connexion.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AppRoutingModule } from './app-routing.module';
     PartieComponent,
     Jeu2Component,
     QuestionComponent,
-    ScoreComponent
+    ScoreComponent,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,

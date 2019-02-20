@@ -7,6 +7,7 @@ import {Verbe} from '../Verbe';
 export class GameService {
 
   public score = 0;
+  public playerId: number;
 
   constructor() { }
 

@@ -6,10 +6,12 @@ import {VillesComponent} from './villes/villes.component';
 import {InscriptionComponent} from './inscription/inscription.component';
 import {Jeu2Component} from './jeu2/jeu2.component';
 import {ScoreComponent} from './score/score.component';
+import {ConnexionComponent} from './connexion/connexion.component';
 
 const routes: Routes = [
   { path: 'legumes', component: LegumesComponent},
   { path : 'inscription', component: InscriptionComponent},
+  { path : 'connexion', component: ConnexionComponent},
   { path : 'jeu', component: Jeu2Component},
   { path : 'score', component: ScoreComponent},
 ];
