@@ -34,12 +34,14 @@ export class Jeu2Component implements OnInit {
   }
 
   ngOnInit() {
-    this.createQuestion();
-    timer(20000)
-      .subscribe(() => {
-        this.isDone = true;
-        this.router.navigate(['/score']);
-      });
+    this.gameService.createPartie(() => {
+      this.createQuestion();
+      timer(20000)
+        .subscribe(() => {
+          this.isDone = true;
+          this.router.navigate(['/score']);
+        });
+    })
     /*this.verbesService.fetch(() => {
       this.createQuestion();
 

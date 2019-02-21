@@ -10,12 +10,14 @@ import {GameService} from '../game.service';
 export class ScoreComponent implements OnInit {
 
   route: ActivatedRoute;
+  score: number = null;
 
   constructor(route: ActivatedRoute, public gameService: GameService) {
     this.route = route;
   }
 
   ngOnInit() {
+    this.gameService.getScore(score => this.score = score);
   }
 
 
