@@ -18,9 +18,7 @@ export class ScoreComponent implements OnInit {
 
   ngOnInit() {
     this.gameService.getScore(score => {
-      this.score = score;
+        this.score = score;
     });
   }
-
-
 }
