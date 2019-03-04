@@ -18,9 +18,7 @@ export class ScoreComponent implements OnInit {
 
   ngOnInit() {
     this.gameService.getScore(score => {
-      if (isNaN(score)) {
-        this.score = score;
-      }
+      this.score = score;
     });
   }
 
