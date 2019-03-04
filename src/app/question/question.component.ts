@@ -25,8 +25,7 @@ export class QuestionComponent implements OnInit {
   }
 
   validate() {
-    const won = this.gameService.updateScore(
-        this.verbe, this.preterit, this.participePasse);
+    this.gameService.updateScore(this.verbe, this.preterit, this.participePasse);
     this.participePasse = '';
     this.preterit = '';
     this.answered.emit();
