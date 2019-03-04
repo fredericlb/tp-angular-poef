@@ -32,6 +32,7 @@ export class QuestionComponent implements OnInit {
     this.answered.emit();
 
     return won;
+
   }
 
 }
