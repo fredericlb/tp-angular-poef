@@ -41,7 +41,7 @@ export class Jeu2Component implements OnInit {
           this.isDone = true;
           this.router.navigate(['/score']);
         });
-    })
+    });
     /*this.verbesService.fetch(() => {
       this.createQuestion();
 

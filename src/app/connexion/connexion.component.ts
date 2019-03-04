@@ -30,7 +30,7 @@ export class ConnexionComponent implements OnInit {
 
     this.http.post('http://localhost:8000/connexion', body)
       .subscribe((r: any) => {
-        if (r == null) {
+        if (!(r != null)) {
           alert('Identifiant ou mot de passe incorrect');
         } else {
           this.gameService.playerId = r;
