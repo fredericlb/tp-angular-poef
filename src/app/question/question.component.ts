@@ -30,6 +30,9 @@ export class QuestionComponent implements OnInit {
     this.participePasse = '';
     this.preterit = '';
     this.answered.emit();
+
+    return won;
+
   }
 
 }
